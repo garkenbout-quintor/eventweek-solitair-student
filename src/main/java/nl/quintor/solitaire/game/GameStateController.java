@@ -6,6 +6,7 @@ import nl.quintor.solitaire.models.state.GameState;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.Arrays;
 import java.util.Collections;
 
@@ -35,7 +36,10 @@ public class GameStateController {
      * @param gameState GameState object that the score penalty is applied to
      */
     public static void applyTimePenalty(GameState gameState){
-        // TODO: Write implementation
+        var seconds = gameState.getEndTime().toEpochSecond(ZoneOffset.UTC) - gameState.getStartTime().toEpochSecond(ZoneOffset.UTC);
+
+        var timePenalty = seconds / 10 * -2;
+        gameState.setTimeScore(timePenalty);
     }
 
     /**
