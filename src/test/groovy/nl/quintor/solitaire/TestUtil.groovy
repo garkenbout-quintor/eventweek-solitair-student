@@ -17,7 +17,7 @@ class TestUtil {
         result.invisibleCards = nrOfInvisible
         def fullCards = Deck.createDefaultDeck()
         if (nrOfCards > 0){
-            (0..<nrOfCards).each {
+            (0..nrOfCards).each {
                 result.add(fullCards.remove(it))
             }
         }

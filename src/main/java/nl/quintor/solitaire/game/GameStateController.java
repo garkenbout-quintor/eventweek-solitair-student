@@ -6,8 +6,11 @@ import nl.quintor.solitaire.models.state.GameState;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Date;
 
 /**
  * Library class for GameState initiation and status checks that are called from {@link nl.quintor.solitaire.Main}.
@@ -25,7 +28,28 @@ public class GameStateController {
      */
     public static GameState init(){
         // TODO: Write implementation
-        return new GameState();
+           GameState gameState = new GameState();
+            Deck deck = Deck.createDefaultDeck();
+            Collections.shuffle(deck);
+
+            String[] stackHeaders = new String[]{"SA", "SB", "SC", "SD"};
+            Arrays.stream(stackHeaders).forEach(header -> gameState.getStackPiles().put(header, new Deck(DeckType.STACK)));
+
+            String[] columnHeaders = new String[]{"A", "B", "C", "D", "E", "F", "G"};
+            for(int i = 0; i < columnHeaders.length; i++){
+                Deck column = new Deck(DeckType.COLUMN);
+                column.setInvisibleCards((i));
+                for(int j = 0; j < i +1; j++){
+                    column.add(deck.remove(0));
+                }
+                gameState.getColumns().put(columnHeaders[i], column);
+            }
+
+            gameState.getStock().add(deck.remove(0));
+            gameState.getWaste().addAll(deck);
+
+        gameState.setStartTime(LocalDateTime.now());
+            return gameState;
     }
 
     /**
@@ -36,6 +60,11 @@ public class GameStateController {
      */
     public static void applyTimePenalty(GameState gameState){
         // TODO: Write implementation
+        LocalDateTime startTime =  gameState.getStartTime();
+        LocalDateTime now = gameState.getEndTime();
+        long playedTime = startTime.until(now, ChronoUnit.SECONDS);
+        long timeScorePenalty = playedTime / 10 * -2;
+        gameState.setTimeScore(timeScorePenalty);
     }
 
     /**
@@ -46,6 +75,14 @@ public class GameStateController {
      */
     public static void applyBonusScore(GameState gameState){
         // TODO: Write implementation
+
+        LocalDateTime startTime =  gameState.getStartTime();
+        LocalDateTime now = gameState.getEndTime();
+        long playedTime = startTime.until(now, ChronoUnit.SECONDS);
+        if(playedTime > 30){
+            long bonusScore = 700000 / playedTime;
+            gameState.setTimeScore(bonusScore);
+        }
     }
 
     /**
@@ -57,5 +94,11 @@ public class GameStateController {
      */
     public static void detectGameWin(GameState gameState){
         // TODO: Write implementation
+        if(gameState.getStock().isEmpty() && gameState.getWaste().isEmpty()){
+         gameState.setGameWon(true);
+        }
+        else if(gameState.getStock().isEmpty() && gameState.getWaste().isEmpty()){
+            gameState.setGameWon(false);
+        }
     }
 }

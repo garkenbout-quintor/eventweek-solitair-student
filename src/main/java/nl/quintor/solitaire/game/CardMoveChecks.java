@@ -15,6 +15,8 @@ import nl.quintor.solitaire.models.deck.DeckType;
  * shown to the user.
  */
 public class CardMoveChecks {
+    private static Object MoveException;
+
     private CardMoveChecks(){}
     private final static String helpInstructions = new Help().toString();
 
@@ -46,6 +48,17 @@ public class CardMoveChecks {
      */
     public static void deckLevelChecks(Deck sourceDeck, int sourceCardIndex, Deck destinationDeck) throws MoveException {
         // TODO: Write implementation
+        if( destinationDeck.getDeckType() == DeckType.STOCK)
+            throw new MoveException("You can\'t move cards to the stock");
+        if(sourceDeck == destinationDeck)
+            throw new MoveException("Move source and destination can\'t be the same");
+        if(sourceDeck.isEmpty())
+            throw  new MoveException("You can\'t move a card from an empty deck");
+        if(sourceDeck.getInvisibleCards() != 0)
+            throw new MoveException("You can\'t move an invisible card");
+        if(sourceCardIndex != 1 && destinationDeck.getDeckType() == DeckType.STACK)
+            throw new MoveException("You can\'t move more than 1 card at a time to a Stack Pile");
+
     }
 
     /**
@@ -73,6 +86,7 @@ public class CardMoveChecks {
      */
     static void checkStackMove(Card targetCard, Card cardToAdd) throws MoveException {
         // TODO: Write implementation
+
     }
 
     /**
@@ -84,6 +98,7 @@ public class CardMoveChecks {
      */
     static void checkColumnMove(Card targetCard, Card cardToAdd) throws MoveException {
         /// TODO: Write implementation
+
     }
 
     /**
@@ -94,8 +109,9 @@ public class CardMoveChecks {
      * @return true if the cards are of different colors
      */
     static boolean opposingColor(Card card1, Card card2){
-        // TODO: Write implementation
-        return true;
+        if (redSuit(card1) != redSuit(card2))
+            return  true;
+        return  false;
     }
 
     /**
