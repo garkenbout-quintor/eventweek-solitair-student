@@ -9,9 +9,9 @@ on the work your team sees.
 | #     | Description                                       | Difficulty            |   By              | Status    |
 |-------|:-------------------------------------------------:|----------------------:|------------------:|----------:|
 | 1     | Write the implementations for CardMoveChecks deckLevelCheck method| Easy              |       | NotDone   |
-| 2     | Write the implementations for CardMoveChecks opposingColor method| Easy               |       | NotDone   |
+| 2     | Write the implementations for CardMoveChecks opposingColor method| Easy               |       | Done   |
 | 3     | Write the implementations for CardMoveChecks cardMoveCheck method| Easy               |       | NotDone   |
-| 4     | Write the implementation for the GameStateController init method| Difficult           |       | NotDone   |
+| 4     | Write the implementation for the GameStateController init method| Difficult           |       | Done   |
 | 5     | Write the implementations for CardMoveChecks checkPlayerInput method| Moderate        |       | NotDone   |
 | 6     | Write the implementations for GameStateParser PadAndAdd method| Moderate              |       | NotDone   |
 | 7     | Write the implementations for GameStateParser cardStringOrNull method| Easy           |       | NotDone   |
@@ -19,9 +19,9 @@ on the work your team sees.
 | 9     | Write the implementations for GameStateParser printRow method| Moderate               |       | NotDone   |
 | 10    | Write the implementations for GameStateParser parseGameState method| DIfficult        |       | NotDone   |
 | 11    | Write the implementation for the GameStateController winDetection method| Moderate    |       | NotDone   |
-| 12    | Write the implementation for the GameStateController applyBonusScore method| Moderate |       | NotDone   |
-| 13    | Write the implementation for the GameStateController applyTimePenalty method| Moderate|       | NotDone   |
-| 14    | Write the implementation for the GameStateController init method| Moderate            |       | NotDone   |
+| 12    | Write the implementation for the GameStateController applyBonusScore method| Moderate |       | Done   |
+| 13    | Write the implementation for the GameStateController applyTimePenalty method| Moderate|       | Done   |
+| 14    | Write the implementation for the GameStateController init method| Moderate            |       | Done   |
 | 15    | Refine with the team which task to add to let all tests pass| Moderate                |       | NotDone   |
 
 # Sprint 0
