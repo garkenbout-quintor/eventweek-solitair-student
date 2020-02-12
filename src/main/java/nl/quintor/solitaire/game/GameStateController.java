@@ -1,13 +1,9 @@
 package nl.quintor.solitaire.game;
 
 import nl.quintor.solitaire.models.deck.Deck;
-import nl.quintor.solitaire.models.deck.DeckType;
 import nl.quintor.solitaire.models.state.GameState;
 
-import java.time.Duration;
-import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Library class for GameState initiation and status checks that are called from {@link nl.quintor.solitaire.Main}.
@@ -57,5 +53,11 @@ public class GameStateController {
      */
     public static void detectGameWin(GameState gameState){
         // TODO: Write implementation
+        Boolean foundInvisibleCards = gameState.getColumns().values().stream().anyMatch(d -> (d.getInvisibleCards() > 0));
+
+        if(foundInvisibleCards){
+            gameState.setGameWon(true);
+        }
+
     }
 }
