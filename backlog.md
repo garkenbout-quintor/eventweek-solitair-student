@@ -6,23 +6,23 @@ existing tests. There is a order which implementations to write. This backlog is
 Not all task are in the backlog only the most significant ones. It's up for the team to add the other tasks based
 on the work your team sees.
 
-| #     | Description                                       | Difficulty
-|-------|:-------------------------------------------------:|----------------------
-| 1     | Write the implementations for CardMoveChecks deckLevelCheck method| Easy
-| 2     | Write the implementations for CardMoveChecks opposingColor method| Easy
-| 3     | Write the implementations for CardMoveChecks cardMoveCheck method| Easy
-| 4     | Write the implementation for the GameStateController init method| Difficult
-| 5     | Write the implementations for CardMoveChecks checkPlayerInput method| Moderate
-| 6     | Write the implementations for GameStateParser PadAndAdd method| Moderate
-| 7     | Write the implementations for GameStateParser cardStringOrNull method| Easy
-| 8     | Write the implementations for GameStateParser PadAndAdd method| Moderate
-| 9     | Write the implementations for GameStateParser printRow method| Moderate
-| 10    | Write the implementations for GameStateParser parseGameState method| DIfficult
-| 11    | Write the implementation for the GameStateController winDetection method| Moderate
-| 12    | Write the implementation for the GameStateController applyBonusScore method| Moderate
-| 13    | Write the implementation for the GameStateController applyTimePenalty method| Moderate
-| 14    | Write the implementation for the GameStateController init method| Moderate
-| 15    | Refine with the team which task to add to let all tests pass| Moderate
+| #     | Description                                       | Difficulty            |   By              | Status    |
+|-------|:-------------------------------------------------:|----------------------:|------------------:|----------:|
+| 1     | Write the implementations for CardMoveChecks deckLevelCheck method| Easy              |       | NotDone   |
+| 2     | Write the implementations for CardMoveChecks opposingColor method| Easy               |       | NotDone   |
+| 3     | Write the implementations for CardMoveChecks cardMoveCheck method| Easy               |       | NotDone   |
+| 4     | Write the implementation for the GameStateController init method| Difficult           |       | NotDone   |
+| 5     | Write the implementations for CardMoveChecks checkPlayerInput method| Moderate        |       | NotDone   |
+| 6     | Write the implementations for GameStateParser PadAndAdd method| Moderate              |       | NotDone   |
+| 7     | Write the implementations for GameStateParser cardStringOrNull method| Easy           |       | NotDone   |
+| 8     | Write the implementations for GameStateParser PadAndAdd method| Moderate              |       | NotDone   |
+| 9     | Write the implementations for GameStateParser printRow method| Moderate               |       | NotDone   |
+| 10    | Write the implementations for GameStateParser parseGameState method| DIfficult        |       | NotDone   |
+| 11    | Write the implementation for the GameStateController winDetection method| Moderate    |       | NotDone   |
+| 12    | Write the implementation for the GameStateController applyBonusScore method| Moderate |       | NotDone   |
+| 13    | Write the implementation for the GameStateController applyTimePenalty method| Moderate|       | NotDone   |
+| 14    | Write the implementation for the GameStateController init method| Moderate            |       | NotDone   |
+| 15    | Refine with the team which task to add to let all tests pass| Moderate                |       | NotDone   |
 
 # Sprint 0
 Before jumping into the code it's a good practice to start with a sprint 0. In sprint 0 you
