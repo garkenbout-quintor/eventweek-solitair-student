@@ -25,7 +25,6 @@ public class GameStateController {
      * @return a new GameState object, ready to go
      */
     public static GameState init(){
-        // TODO: Write implementation
         return new GameState();
     }
 
